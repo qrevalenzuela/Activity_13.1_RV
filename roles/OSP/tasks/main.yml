@@ -1,0 +1,8 @@
+  - name: installing OpenStack
+    apt:
+      name:
+          - python3-openstackclient
+          - nova-compute
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"

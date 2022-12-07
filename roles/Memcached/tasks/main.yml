@@ -1,0 +1,12 @@
+- name: installing memcached
+  apt:
+     name:
+        - memcached
+     state: latest
+     update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+
+- name: restarting memcached
+  systemd:
+      name: memcached
+      state: restarted

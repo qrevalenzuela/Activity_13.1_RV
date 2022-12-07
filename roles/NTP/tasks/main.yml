@@ -1,0 +1,16 @@
+ - name: install ntp by chrony
+   apt:
+      name:
+        - chrony
+      state: latest
+      update_cache: yes
+
+ - name: starting the service chrony
+   systemd:
+       name: chrony
+       state: started
+
+ - name: enabling chrony
+   systemd:
+         name: chrony
+         enabled: yes

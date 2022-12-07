@@ -1,0 +1,8 @@
+---
+  - name: installing message queue
+    apt:
+      name:
+          - rabbitmq-server
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
